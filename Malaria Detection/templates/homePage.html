@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Home Page</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/css/homePage.css">
+    <link rel="icon" href="../static/img/icon.png">
+</head>
+
+<body>
+    <div class="mainContainer">
+        <div class="headingContainer">
+            <div class="heading">
+                IDENTIFICATION OF PLASMODIUM PARASITES IN HUMAN BLOOD CELLS USING CONVOLUTIONAL NEURAL NETWORKS
+            </div>
+        </div>
+        <div class="leftContainer">
+            <div class="videoContainer">
+                <video autoplay muted loop class="videoPlayer">
+                    <source src="../static/img/Malaria 3D Animation Shows How the Infection Spreads in the Body.mp4 "
+                        type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <div class="rightContainer">
+            <input type="button" value="Let's get started ->" onclick="moveTo()" class="primaryButton">
+        </div>
+
+    </div>
+
+</body>
+
+<script>
+    const moveTo = () => {
+        window.location = "{{url_for('index')}}";
+    }
+
+</script>
+
+</html>

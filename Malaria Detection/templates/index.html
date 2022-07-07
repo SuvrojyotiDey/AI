@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Upload</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="icon" href="../static/img/icon.png">
+
+</head>
+
+<body>
+
+    <div class="mainContainer">
+        <div class="headingContainer">
+            <div class="heading">
+                IDENTIFICATION OF PLASMODIUM PARASITES IN HUMAN BLOOD CELLS USING CONVOLUTIONAL NEURAL NETWORKS
+            </div>
+        </div>
+
+        <div class="contentContainer">
+
+            <div class="uploadLabelContainer">
+                <div class="uploadLabel">
+                    Upload Image
+                </div>
+            </div>
+
+            <form class="formContainer" action="/upload" method="POST" enctype="multipart/form-data">
+
+                <div class="uploadContainer">
+                    <label for="imagefile">
+                        <img src="../static/img/upload.png" class="uploadImage">
+                    </label>
+                    <div class="uploadInputContainer">
+                        <input type="file" name="imagefile" id="imagefile" class="uploadInput" accept="image/*"
+                            onchange="previewImage();" required>
+                    </div>
+                </div>
+
+                <img id="preview" class="imagePreview">
+
+                <div class="submitContainer">
+                    <button class="submitButton" type="submit">
+                        Submit
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+        
+    </div>
+
+</body>
+
+<script>
+    function previewImage() {
+        var file = document.getElementById("imagefile").files;
+        if (file.length > 0) {
+            var fileReader = new FileReader();
+
+            fileReader.onload = function (event) {
+                document.getElementById("preview").setAttribute("src", event.target.result);
+            };
+
+            fileReader.readAsDataURL(file[0]);
+        }
+    }
+</script>
+
+
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Upload Result</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/css/result.css">
+    <link rel="icon" href="../static/img/icon.png">
+
+</head>
+
+<body>
+    <div class="mainContainer">
+        <div class="headingContainer">
+            <div class="heading">
+                <div>IDENTIFICATION OF PLASMODIUM PARASITES IN HUMAN BLOOD CELLS USING CONVOLUTIONAL NEURAL NETWORKS
+                </div>
+
+            </div>
+        </div>
+
+        <div class="contentContainer">
+            <div class="subHeading1">Malaria-Infected Cells Detection</div>
+            <div class="resultContainer">
+                <div class="result">
+                    <img src="data:image/png;base64,{{processed_file}}">
+
+                    <div class="resultHeading">Prediction: {{out_pred}}</div>
+                </div>
+                <div class="buttonContainer">
+                    <a class="primaryButton" href="{{ url_for('performance')}}">Performance Analysis -></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
